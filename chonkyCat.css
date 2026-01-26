@@ -1,0 +1,8 @@
+/* AUTHOR - Kiara Jenkins */
+body{
+    font-family:'Courier New', Courier, monospace;
+    text-align: center;
+}
+#board{
+   background-image: url("./assets/background.png")
+}
