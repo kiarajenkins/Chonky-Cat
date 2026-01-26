@@ -61,6 +61,8 @@ window.onload = function () {
     requestAnimationFrame(update);
     setInterval(placeTowers, 1500);
     this.document.addEventListener("keydown", moveCat);
+    this.document.addEventListener("mousedown", moveCat);
+    this.document.addEventListener("touchstart", moveCat);
 }
 
 function update() {
@@ -141,7 +143,9 @@ function placeTowers() {
 }
 
 function moveCat(e) {
-    if (e.code == "Space" || e.code == "ArrowUp" || e.code == "ArrowRight") {
+    if (e.code == "Space" || e.type == "mousedown" || e.type == "touchstart") {
+        // stops the screen from scrolling
+        e.preventDefault(); 
         // jump
         velocityY = -6;
     }
